@@ -138,6 +138,9 @@ texture = ExtResource("1_ig7tw")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0xm2m")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(92, 349.5)
+
 [node name="Main" type="Node2D" unique_id=2110349015]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=28741771]
@@ -147,8 +150,17 @@ scale = Vector2(10.03125, 5.227792)
 texture = ExtResource("1_ig7tw")
 
 [node name="Player" parent="." unique_id=1361595233 instance=ExtResource("2_0xm2m")]
-position = Vector2(505, 155)
+position = Vector2(428, 181)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=383969199]
 tile_map_data = PackedByteArray("AAAnABsAAAAHAAUAAAAmABsAAAAHAAUAAAAlABsAAAAHAAUAAAAkABsAAAAHAAUAAAAjABsAAAAHAAUAAAAiABsAAAAHAAUAAAAhABsAAAAHAAUAAAAgABsAAAAHAAUAAAAfABsAAAAHAAUAAAAeABsAAAAHAAUAAAAdABsAAAAHAAUAAAAcABsAAAAHAAUAAAAbABsAAAAHAAUAAAAaABsAAAAHAAUAAAAZABsAAAAHAAUAAAAYABsAAAAHAAUAAAAXABsAAAAHAAUAAAAWABsAAAAHAAUAAAAVABsAAAAHAAUAAAAUABsAAAAHAAUAAAATABsAAAAHAAUAAAATABoAAAAHAAUAAAATABkAAAAHAAUAAAATABgAAAAHAAUAAAATABcAAAAHAAUAAAASABcAAAAHAAUAAAASABYAAAAHAAUAAAASABUAAAAHAAUAAAASABQAAAAHAAUAAAASABMAAAAHAAUAAAASABIAAAAHAAUAAAATABIAAAAHAAUAAAAUABIAAAAHAAUAAAAVABIAAAAHAAUAAAAWABMAAAAHAAUAAAAWABQAAAAHAAUAAAAWABUAAAAHAAUAAAAWABYAAAAHAAUAAAAWABcAAAAHAAUAAAAXABcAAAAHAAUAAAAYABcAAAAHAAUAAAAYABYAAAAHAAUAAAAYABUAAAAHAAUAAAAZABUAAAAHAAUAAAAaABUAAAAHAAUAAAAbABUAAAAHAAUAAAAbABYAAAAHAAUAAAAbABcAAAAHAAUAAAAcABcAAAAHAAUAAAAdABcAAAAHAAUAAAAeABcAAAAHAAUAAAAeABgAAAAHAAUAAAAeABkAAAAHAAUAAAAfABkAAAAHAAUAAAAgABkAAAAHAAUAAAAhABkAAAAHAAUAAAAiABkAAAAHAAUAAAAiABoAAAAHAAUAAAAjABoAAAAHAAUAAAAkABoAAAAHAAUAAAAlABoAAAAHAAUAAAA=")
 tile_set = SubResource("TileSet_g4v7s")
+
+[node name="TestAntiGravArea" type="Area2D" parent="." unique_id=906633325]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestAntiGravArea" unique_id=1164665146]
+position = Vector2(593, 271.75)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="body_entered" from="TestAntiGravArea" to="Player" method="_on_test_anti_grav_area_body_entered"]
+[connection signal="body_exited" from="TestAntiGravArea" to="Player" method="_on_test_anti_grav_area_body_exited"]
