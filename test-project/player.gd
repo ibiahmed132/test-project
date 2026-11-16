@@ -31,9 +31,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _on_test_anti_grav_area_body_entered(body: CharacterBody2D) -> void:
+func enable_anti_gravity():
 	grav = -1
 
 
-func _on_test_anti_grav_area_body_exited(body: CharacterBody2D) -> void:
+func disable_anti_gravity():
 	grav = 1
