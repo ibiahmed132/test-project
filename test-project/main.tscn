@@ -158,7 +158,7 @@ tile_set = SubResource("TileSet_g4v7s")
 
 [node name="TestAntiGravArea" type="Area2D" parent="." unique_id=906633325]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestAntiGravArea" unique_id=1164665146]
+[node name="AntiGravCollision" type="CollisionShape2D" parent="TestAntiGravArea" unique_id=1164665146]
 position = Vector2(593, 271.75)
 shape = SubResource("RectangleShape2D_g4v7s")
 
