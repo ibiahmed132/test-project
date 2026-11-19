@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://btv6fw3c5lhjy"]
 
 [ext_resource type="Script" uid="uid://dllk4i3683jry" path="res://antigravarea.gd" id="1_joa8p"]
+[ext_resource type="Texture2D" uid="uid://hl6l7gg1dqun" path="res://antigravsprite.png" id="2_po63v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(439, 349.5)
@@ -13,6 +14,11 @@ position = Vector2(766.5, 271.75)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="AntiGravOverlay" type="Sprite2D" parent="." unique_id=459137946]
+
+[node name="AntiGravSprite" type="Sprite2D" parent="." unique_id=54542165]
+position = Vector2(770, 276)
+scale = Vector2(27.749998, 21.75)
+texture = ExtResource("2_po63v")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
